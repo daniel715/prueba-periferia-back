@@ -1,18 +1,16 @@
 package com.daniel.prueba.calculator;
 
-import com.daniel.prueba.calculator.ICalculatorDao;
 import com.daniel.prueba.dto.Request;
 import com.daniel.prueba.dto.Response;
-import com.daniel.prueba.dto.Tasas;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
 import java.util.Optional;
 
 @Repository
-public class Calculator implements ICalculatorDao {
+public class Calculator implements ICalculator {
 
-    public Tasas tasas;
+    public TasaCalculator tasas = new TasaCalculator();
 
     @Override
     public Response convert(Request request) {
@@ -44,68 +42,37 @@ public class Calculator implements ICalculatorDao {
     }
 
     public Response solesToDolar(Request request) {
-        BigDecimal resultado = tasas.solesdolar.multiply(request.getMonto());
-        Response response = new Response();
-        response.setMonedaDestino(request.getMonedaDestino());
-        response.setMonedaOrigen(request.getMonedaOrigen());
-        response.setMonto(resultado);
-        response.setTipoCambio(tasas.solesdolar);
-        response.setMontoConTipoCambio(resultado.toString() + " con tipo de cambio " + tasas.solesdolar);
-        return response;
+        return getResponse(request);
     }
 
     public Response solesToEuro(Request request) {
-        BigDecimal resultado = tasas.soleseuro.multiply(request.getMonto());
-        Response response = new Response();
-        response.setMonedaDestino(request.getMonedaDestino());
-        response.setMonedaOrigen(request.getMonedaOrigen());
-        response.setMonto(resultado);
-        response.setTipoCambio(tasas.soleseuro);
-        response.setMontoConTipoCambio(resultado.toString() + " con tipo de cambio " + tasas.soleseuro);
-        return response;
+        return getResponse(request);
     }
 
     public Response dolarToSoles(Request request) {
-        BigDecimal resultado = tasas.dolarsoles.multiply(request.getMonto());
-        Response response = new Response();
-        response.setMonedaDestino(request.getMonedaDestino());
-        response.setMonedaOrigen(request.getMonedaOrigen());
-        response.setMonto(resultado);
-        response.setTipoCambio(tasas.dolarsoles);
-        response.setMontoConTipoCambio(resultado.toString() + " con tipo de cambio " + tasas.dolarsoles);
-        return response;
+        return getResponse(request);
     }
 
     public Response dolarToEuro(Request request) {
-        BigDecimal resultado = tasas.dolareuro.multiply(request.getMonto());
-        Response response = new Response();
-        response.setMonedaDestino(request.getMonedaDestino());
-        response.setMonedaOrigen(request.getMonedaOrigen());
-        response.setMonto(resultado);
-        response.setTipoCambio(tasas.dolareuro);
-        response.setMontoConTipoCambio(resultado.toString() + " con tipo de cambio " + tasas.dolareuro);
-        return response;
+        return getResponse(request);
     }
 
     public Response euroToSoles(Request request) {
-        BigDecimal resultado = tasas.eurosoles.multiply(request.getMonto());
-        Response response = new Response();
-        response.setMonedaDestino(request.getMonedaDestino());
-        response.setMonedaOrigen(request.getMonedaOrigen());
-        response.setMonto(resultado);
-        response.setTipoCambio(tasas.eurosoles);
-        response.setMontoConTipoCambio(resultado.toString() + " con tipo de cambio " + tasas.eurosoles);
-        return response;
+        return getResponse(request);
     }
 
     public Response euroToDolar(Request request) {
-        BigDecimal resultado = tasas.eurodolar.multiply(request.getMonto());
+        return getResponse(request);
+    }
+
+    private Response getResponse(Request request) {
+        BigDecimal resultado = tasas.getTipoCambio(request.getMonedaOrigen(),request.getMonedaDestino()).multiply(request.getMonto());
         Response response = new Response();
         response.setMonedaDestino(request.getMonedaDestino());
         response.setMonedaOrigen(request.getMonedaOrigen());
         response.setMonto(resultado);
-        response.setTipoCambio(tasas.eurodolar);
-        response.setMontoConTipoCambio(resultado.toString() + " con tipo de cambio " + tasas.eurodolar);
+        response.setTipoCambio(resultado);
+        response.setMontoConTipoCambio(resultado.toString() + " con tipo de cambio " + resultado);
         return response;
     }
 

@@ -1,17 +1,9 @@
 package com.daniel.prueba.dto;
 
-import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 
-@Entity
-@Table(name="Request")
 public class Response {
-
-    private static final long serialVersionUID = 1L;
-
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private String id;
     private BigDecimal monto;
     private String montoConTipoCambio;

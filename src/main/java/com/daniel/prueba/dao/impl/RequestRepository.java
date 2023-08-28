@@ -1,7 +1,7 @@
 package com.daniel.prueba.dao.impl;
 
 import com.daniel.prueba.calculator.Calculator;
-import com.daniel.prueba.calculator.ICalculatorDao;
+import com.daniel.prueba.calculator.ICalculator;
 import com.daniel.prueba.dao.IRequestRepository;
 import com.daniel.prueba.dto.Request;
 import com.daniel.prueba.dto.Response;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 public class RequestRepository implements IRequestRepository {
 
 
-    private ICalculatorDao taskDao = new Calculator();
+    private ICalculator taskDao = new Calculator();
 
 
     @Override
