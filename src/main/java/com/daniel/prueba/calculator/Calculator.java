@@ -36,7 +36,7 @@ public class Calculator implements ICalculator {
                 response = euroToDolar(request);
                 break;
             default:
-                response.setMensajeError("No se acepta esa moneda,escoger soles, dolar o euro");
+                response.setMensajeError("Moneda Repetida");
         }
         return response;
     }
