@@ -36,4 +36,4 @@ insert into Tasa (id, monedaOrigen,monedaDestino,tasa)values(5,'euro','soles', 3
 insert into Tasa (id, monedaOrigen,monedaDestino,tasa)values(6,'euro','dolar', 1.08 );
 
 
-// DESPUES DE EJECUTAR EL FRONT ENTRAR AL LIKN http://localhost:3000/
+// DESPUES DE EJECUTAR EL FRONT ENTRAR AL LIKN http://localhost:3000/  la contrasena es 123
