@@ -7,13 +7,12 @@ docker run DATABASE_SERVER=jdbc:h2:mem:maeldung -dp 8080:8080 prueba
 
 SE EJECUTARA LA APLICACION DESDE DOCKER
 ************
-CREAR TABLA TASA Y INICIARLIZAR DATOS
 ENTRAR AL SIGUIENTE LINK : http://localhost:8080/h2
     CONECTAR
     driverclass : org.h2.Driver
     JDBC Url : jdbc:h2:~/maeldung
     User Name: sa
- 
+CREAR TABLA TASA Y INICIARLIZAR DATOS
 EJECUTAR SIGUIENTES QUERIES(COPIAR  Y PEGAR)
 
 DROP TABLE IF EXISTS Tasa;
