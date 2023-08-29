@@ -6,7 +6,7 @@ EJECUTAR
 mvn clean install PARA OBTENER JAR
 PARA DOCKERIZAR JAR EJECUTAR 
 docker build -t prueba .
-docker run DATABASE_SERVER=jdbc:h2:mem:maeldung -dp 8080:8080 prueba
+docker run -e DATABASE_SERVER=jdbc:h2:mem:maeldung -dp 8080:8080 prueba
 
 SE EJECUTARA LA APLICACION DESDE DOCKER
 ************
