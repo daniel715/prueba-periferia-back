@@ -12,7 +12,8 @@ ENTRAR AL SIGUIENTE LINK : http://localhost:8080/h2
     driverclass : org.h2.Driver
     JDBC Url : jdbc:h2:~/maeldung
     User Name: sa
-CREAR TABLA TASA E INICIARLIZAR DATOS
+
+CREAR TABLA TASA E INICIAR DATOS
 EJECUTAR SIGUIENTES QUERIES(COPIAR  Y PEGAR)
 
 DROP TABLE IF EXISTS Tasa;
@@ -35,4 +36,4 @@ insert into Tasa (id, monedaOrigen,monedaDestino,tasa)values(5,'euro','soles', 3
 insert into Tasa (id, monedaOrigen,monedaDestino,tasa)values(6,'euro','dolar', 1.08 );
 
 
-// DESPUES DE EJECUTAR EL FRONT ENTRAR AL LIKN http://localhost:3000/  la contrasena es 123
+// DESPUES EJECUTAR EL FRONT ENTRAR AL LINK http://localhost:3000/  la contrasena es 123
