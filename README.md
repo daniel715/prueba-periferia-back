@@ -2,6 +2,9 @@ PASOS PARA INICIAR APLICACION
 
 EJECUTAR DESDE LA RAIZ DEL PROYECTO 
 
+EJECUTAR 
+mvn clean install PARA OBTENER JAR
+EJECUTAR 
 docker build -t prueba .
 docker run DATABASE_SERVER=jdbc:h2:mem:maeldung -dp 8080:8080 prueba
 
